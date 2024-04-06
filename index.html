@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatZing</title>
+<style>
+  body{
+  background-color: rgb(35, 37, 39);
+}
+.container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+}
+
+.column img {
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 100%; 
+  height: auto;
+}
+#desc{
+  font-size: x-large;
+  margin-right: 40px;
+  margin-left: 50px;
+}
+img{
+  width: 180px;
+  height: auto;
+}
+#lefts{
+  margin-top: 50px;
+  margin-left: 100px;
+}
+#rights{
+  margin-top: 200px;
+}
+h1{
+  text-align: center;
+  margin-top: 250px;
+  font-size: xx-large;
+  
+}
+#myForm{
+  justify-content: center;
+  text-align: center;
+}
+.nameIn{
+  width: 280px;
+  height: 28px;
+  font-size: x-large;
+  margin-right: 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+  justify-content: center;
+}
+#submit{
+  font-size: x-large;
+  border-radius: 5px;
+}
+ #entcolor{
+  border-radius: 5px;
+  font-size: x-large;
+} 
+</style>
+
+</head>
+<body>
+
+
+  <div class="container">
+
+    <div class="column">
+        <h1 id="h1" style="color: white">ChatZing</h1>
+        <p id="desc" style="color: whitesmoke;">Hey! this is my project "ChatZing" which is real time chat application and currently under progress. It's designed specifically for group conversations. With ChatZing, you can join chat groups to connect with friends instantly. As this is in its initial phase a lot of features is there to be added so, please be in connect with this. kindly don't share any personal information on this.Thank you.
+        </p>
+    </div>
+
+    <div class="column" id="rights">
+        <img src="/send.png" alt="ChatZing logo" id="img">
+        <br>
+        <br>
+        <form id="myForm">
+          <label for="name" id="entcolor" style="color: white;">Enter your name:</label>
+          <input type="text" id="name" name="name" class="nameIn">
+          <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  localStorage.setItem('name',name)
+  if (name.trim() !== "") { 
+    window.location.href = "index2.html";
+  } else {
+    alert("Please enter your name.");
+  }
+});
+</script>
+
+</body>
+</html>
